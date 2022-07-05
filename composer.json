@@ -1,0 +1,58 @@
+{
+    "name": "tuhin/wp",
+    "description": "Technical",
+    "type": "wp-plugin",
+    "license": "GPL",
+    "autoload": {
+        "psr-4": {
+            "Tuhin\\Wp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tuhin",
+            "email": "khaled.softsolvers@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+
+    "require": {
+        "wp-cli/wp-cli": "*",
+        "wp-cli/wp-cli-bundle": "*",
+        "php": " ^7.0",
+        "ext-gd": "*",
+        "composer/installers": "~1.0",
+        "johnpbloch/wordpress": "*",
+        "vendor/package": "*"
+    },
+    "repositories": [
+        {
+            "type":"vcs",
+            "url":"https://github.com/khaledsoftsolvers/tuhin-plugin"
+        }
+    ],
+    "extra": {
+        "wordpress-install-dir": "web/wp",
+        "installer-paths": {
+          "web/wp-content/mu-plugins/{$name}" : ["type:wordpress-muplugin"],
+          "web/wp-content/plugins/{$name}": ["type:wordpress-plugin"],
+          "web/wp-content/themes/{$name}": ["type:wordpress-theme"]
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "squizlabs/php_codesniffer": "*",
+        "wp-coding-standards/wpcs": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "composer/installers": true,
+            "johnpbloch/wordpress-core-installer": true
+        }
+    },
+    "scripts": {
+        "post-update-cmd": [
+        ]
+    }
+}
